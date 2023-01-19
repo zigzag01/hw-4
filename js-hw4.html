@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .element_container div{
+            width: 10vw;
+            height: 10vw;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .element_container{
+            width: calc(30vw + 6px);
+            height: calc(30vw + 6px);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 0 auto;
+            padding: 15vh;
+        }
+        .color_bisque{
+            background-color: bisque;
+        }
+        .color_brown{
+            background-color: sandybrown;
+        }
+    </style>
+</head>
+<body>
+    <div class="element_container">
+        <div class="el1"></div>
+        <div class="el2"></div>
+        <div class="el3"></div>
+        <div class="el4"></div>
+        <div class="el5"></div>
+        <div class="el6"></div>
+        <div class="el7"></div>
+        <div class="el8"></div>
+        <div class="el9"></div>
+    </div>
+
+    <script>
+        let els = document.querySelectorAll('.element_container div');
+
+        for(let item of els) {
+            item.addEventListener('mouseover', bcColorBis);
+            item.addEventListener('mouseout', bcColorBr);
+        }
+
+        function bcColorBis(){
+            event.target.classList.toggle('color_bisque');
+        }
+        function bcColorBr(){
+            event.target.classList.toggle('color_brown');
+        }
+        
+    </script>
+</body>
+</html>
